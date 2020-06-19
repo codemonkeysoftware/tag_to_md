@@ -7,8 +7,8 @@ for row in $TAGS  ; do
     echo ${row} | base64 -d | jq -r ${1}
   }
   echo "---
-title:$(_jq '.name') 
-date:$(_jq '.date')
+title: $(_jq '.name') 
+date: $(_jq '.date')
 ---
 $(_jq '.description')
 " > $3/"$(_jq '.date')_$(_jq '.name').md"
