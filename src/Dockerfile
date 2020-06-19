@@ -2,8 +2,8 @@ FROM alpine:latest
 
 RUN apk add curl jq
 
-ADD tag_to_files.sh /usr/local/bin
+ADD convert.sh /usr/local/bin/convert
 
-RUN chmod +x /usr/local/bin/tag_to_files.sh
+RUN chmod +x /usr/local/bin/convert
 
-ENTRYPOINT [ "/usr/local/bin/tag_to_files.sh" ]
+CMD [ "/usr/local/bin/convert" ]
